@@ -13,6 +13,7 @@ public class Grafico extends javax.swing.JFrame {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
+      jLabel2 = new javax.swing.JLabel();
       jScrollPane1 = new javax.swing.JScrollPane();
       jtxtAUno = new javax.swing.JTextArea();
       btnAgregar = new javax.swing.JButton();
@@ -24,12 +25,21 @@ public class Grafico extends javax.swing.JFrame {
       btnExiste = new javax.swing.JButton();
       jScrollPane2 = new javax.swing.JScrollPane();
       jtxtADos = new javax.swing.JTextArea();
+      jLabel3 = new javax.swing.JLabel();
+      jLabel1 = new javax.swing.JLabel();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+      getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+      jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cat01.png"))); // NOI18N
+      getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 160, 160));
 
       jtxtAUno.setColumns(20);
+      jtxtAUno.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
       jtxtAUno.setRows(5);
       jScrollPane1.setViewportView(jtxtAUno);
+
+      getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 514, 432));
 
       btnAgregar.setText("Agregar");
       btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -37,6 +47,7 @@ public class Grafico extends javax.swing.JFrame {
             btnAgregarActionPerformed(evt);
          }
       });
+      getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 11, -1, -1));
 
       btnEliminar.setText("Eliminar");
       btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +55,7 @@ public class Grafico extends javax.swing.JFrame {
             btnEliminarActionPerformed(evt);
          }
       });
+      getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 52, -1, -1));
 
       btnEnlace.setText("Enlazar");
       btnEnlace.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +63,7 @@ public class Grafico extends javax.swing.JFrame {
             btnEnlaceActionPerformed(evt);
          }
       });
+      getContentPane().add(btnEnlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 93, -1, -1));
 
       btnUnidos.setText("Adyacente");
       btnUnidos.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +71,8 @@ public class Grafico extends javax.swing.JFrame {
             btnUnidosActionPerformed(evt);
          }
       });
+      getContentPane().add(btnUnidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 134, -1, -1));
+      getContentPane().add(jlblSee, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 175, 131, 49));
 
       btnDes.setText("Desenlazar");
       btnDes.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +80,7 @@ public class Grafico extends javax.swing.JFrame {
             btnDesActionPerformed(evt);
          }
       });
+      getContentPane().add(btnDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, -1));
 
       btnExiste.setText("Enlazado");
       btnExiste.addActionListener(new java.awt.event.ActionListener() {
@@ -72,61 +88,20 @@ public class Grafico extends javax.swing.JFrame {
             btnExisteActionPerformed(evt);
          }
       });
+      getContentPane().add(btnExiste, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 134, -1, -1));
 
       jtxtADos.setColumns(20);
+      jtxtADos.setFont(new java.awt.Font("Leelawadee", 0, 14)); // NOI18N
       jtxtADos.setRows(5);
       jScrollPane2.setViewportView(jtxtADos);
 
-      javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-      getContentPane().setLayout(layout);
-      layout.setHorizontalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(layout.createSequentialGroup()
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                     .addComponent(btnAgregar)
-                     .addComponent(jlblSee, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                     .addComponent(btnEliminar)
-                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnEnlace)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDes))
-                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnExiste)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUnidos)))
-                  .addGap(0, 35, Short.MAX_VALUE))
-               .addComponent(jScrollPane2))
-            .addContainerGap())
-      );
-      layout.setVerticalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(layout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(layout.createSequentialGroup()
-                  .addComponent(btnAgregar)
-                  .addGap(18, 18, 18)
-                  .addComponent(btnEliminar)
-                  .addGap(18, 18, 18)
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                     .addComponent(btnEnlace)
-                     .addComponent(btnDes))
-                  .addGap(18, 18, 18)
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                     .addComponent(btnExiste)
-                     .addComponent(btnUnidos))
-                  .addGap(18, 18, 18)
-                  .addComponent(jlblSee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGap(18, 18, 18)
-                  .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
-               .addComponent(jScrollPane1))
-            .addContainerGap())
-      );
+      getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 242, 327, 201));
+
+      jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cat02.png"))); // NOI18N
+      getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, -10, 180, 150));
+
+      jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondito.png"))); // NOI18N
+      getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 450));
 
       pack();
    }// </editor-fold>//GEN-END:initComponents
@@ -176,7 +151,7 @@ public class Grafico extends javax.swing.JFrame {
    }//GEN-LAST:event_btnDesActionPerformed
 
    private void btnExisteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExisteActionPerformed
-   int nodouno = Integer.parseInt(JOptionPane.showInputDialog(this,"De que nodo quiere saber si tiene relacionse?"));
+   int nodouno = Integer.parseInt(JOptionPane.showInputDialog(this,"De que nodo quiere saber si tiene relaciones?"));
    jtxtADos.setText(abc.existe(nodouno));
    }//GEN-LAST:event_btnExisteActionPerformed
 
@@ -201,6 +176,9 @@ public class Grafico extends javax.swing.JFrame {
    private javax.swing.JButton btnEnlace;
    private javax.swing.JButton btnExiste;
    private javax.swing.JButton btnUnidos;
+   private javax.swing.JLabel jLabel1;
+   private javax.swing.JLabel jLabel2;
+   private javax.swing.JLabel jLabel3;
    private javax.swing.JScrollPane jScrollPane1;
    private javax.swing.JScrollPane jScrollPane2;
    private javax.swing.JLabel jlblSee;

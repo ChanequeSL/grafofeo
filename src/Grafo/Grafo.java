@@ -105,25 +105,26 @@ public class Grafo {
    }
    public String adyacencia(int nuno,int ndos){
       String cadena="";
-      if(matrizAdya[nuno][ndos]!=0){
-         cadena+="Si estan conectados los nodos -> "+nodos[nuno]+" y "+nodos[ndos] +"\n"
-                 + "Por una distancia de: -> "+matrizAdya[nuno][ndos]+"."; 
+      if(matrizAdya[nuno-1][ndos-1]!=0){
+         cadena+="Si estan conectados los nodos -> "+nodos[nuno-1].getInfo()+" y "+nodos[ndos-1].getInfo() +"\n"
+                 + "Por una distancia de: -> "+matrizAdya[nuno-1][ndos-1]+"."; 
          return cadena;
       }
-      return cadena+="Los Nodos -> "+nodos[nuno]+" y "+nodos[ndos] +"\n"
+      return cadena+="Los Nodos -> "+nodos[nuno-1].getInfo()+" y "+nodos[ndos-1].getInfo() +"\n"
               + "NO estan conectados.";
    }
    public String existe(int nuno){
       String cadena="";
-      if(nodos[nuno].arista>0){
-         cadena+="El nodo -> "+nodos[nuno]+" si tiene aristas (relaciones) con otros nodos"+"\n"
+      if(nodos[nuno-1].arista>0){
+         cadena+="El nodo -> "+nodos[nuno-1].getInfo()+" si tiene aristas (relaciones) con otros nodos"+"\n"
                  + "Los nodos con los que se relaciona son: "+"\n";
-                  for (int z = 0; z < nodos.length; z++) 
                         for (int x = 0; x < nodos.length; x++)
-                           if(matrizAdya[nuno][x]!=0)
-                              cadena+="Nodo "+(x+1)+" -> "+nodos[x+1].getInfo()+"\n";               
+                           if(matrizAdya[nuno-1][x]!=0){
+                              cadena+="Nodo "+(x+1)+" -> "+nodos[x].getInfo()+"\n";
+                           }            
          return cadena;
       }
-      return cadena+="El nodo -> "+nodos[nuno]+" NO tiene aristas (relaciones) con otros nodos";
+      return cadena+="El nodo -> "+nodos[nuno-1].getInfo()+" NO tiene aristas (relaciones) con otros nodos";
    }
+   //Documentar y hacer excepciones.
 }
