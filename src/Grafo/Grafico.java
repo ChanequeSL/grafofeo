@@ -42,6 +42,11 @@ public class Grafico extends javax.swing.JFrame {
       });
 
       btnEnlace.setText("enlace");
+      btnEnlace.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEnlaceActionPerformed(evt);
+         }
+      });
 
       btnAdya.setText("adyacente");
 
@@ -103,6 +108,18 @@ public class Grafico extends javax.swing.JFrame {
       jlblSee.setText("NO Eliminado");
    }
    }//GEN-LAST:event_btnEliminarActionPerformed
+
+   private void btnEnlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnlaceActionPerformed
+   int nodouno = Integer.parseInt(JOptionPane.showInputDialog(this,"Nodo Uno a enlazar:"));
+   int nododos = Integer.parseInt(JOptionPane.showInputDialog(this,"Nodo Dos a enlazar:"));
+   int dist = Integer.parseInt(JOptionPane.showInputDialog(this,"Distancia entre ambos nodos:"));
+   if(abc.enlace(nodouno, nododos, dist)){
+      jlblSee.setText("Enlace Hecho");
+      jtxtAUno.setText(abc.mostrar());
+   }else{
+      jlblSee.setText("Enlace NO Hecho");
+   }
+   }//GEN-LAST:event_btnEnlaceActionPerformed
 
    public static void main(String args[]) {
       java.awt.EventQueue.invokeLater(new Runnable() {

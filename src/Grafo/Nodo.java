@@ -2,7 +2,6 @@ package Grafo;
 public class Nodo {
    private String info;
    private boolean arista;
-   private int[] enlaces;
    private int num;
    public Nodo(String info,int num){
       this.info = info;
@@ -25,15 +24,6 @@ public class Nodo {
    public void setArista(boolean arista) {
       this.arista = arista;
    }
-
-   public int[] getEnlaces() {
-      return enlaces;
-   }
-
-   public void setEnlaces(int[] enlaces) {
-      this.enlaces = enlaces;
-   }
-
    public int getNum() {
       return num;
    }

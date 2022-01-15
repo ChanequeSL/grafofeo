@@ -38,7 +38,6 @@ public class Grafo {
                   }
                      numElem--;
                      return true;
-                  
                }
             }
          }
@@ -72,21 +71,15 @@ public class Grafo {
       }
       return str;
    }
-   
-   
-   
-   
-   
-   /*
-
-   public String mostrar() {
-      String str = "";
-      for (int i = 0; i < numElem; i++) {
-         str += nodos[i].getInfo() + "\n";
+   public boolean enlace(int nuno,int ndos,int distancia){
+      if(matrizAdya[nuno-1][ndos-1]==0){
+      nodos[nuno-1].setArista(true);
+      nodos[ndos-1].setArista(true);
+      matrizAdya[nuno-1][ndos-1]=distancia;
+      matrizAdya[ndos-1][nuno-1]=distancia;
+      return true;
+      }else{
+       return false;  
       }
-      return str;
    }
-   */
-   
-   
 }
