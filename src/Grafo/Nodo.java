@@ -1,11 +1,11 @@
 package Grafo;
 public class Nodo {
    private String info;
-   private boolean arista;
+   protected int arista;
    private int num;
    public Nodo(String info,int num){
       this.info = info;
-      arista = false;
+      arista = 0;
       this.num = num;
    }
 
@@ -17,13 +17,14 @@ public class Nodo {
       this.info = info;
    }
 
-   public boolean isArista() {
+   public int getArista() {
       return arista;
    }
 
-   public void setArista(boolean arista) {
+   public void setArista(int arista) {
       this.arista = arista;
    }
+
    public int getNum() {
       return num;
    }

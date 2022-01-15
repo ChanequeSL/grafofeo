@@ -80,10 +80,21 @@ public class Grafo {
    }
    public boolean enlace(int nuno,int ndos,int distancia){
       if(matrizAdya[nuno-1][ndos-1]==0){
-      nodos[nuno-1].setArista(true);
-      nodos[ndos-1].setArista(true);
+      nodos[nuno-1].arista++;
+      nodos[ndos-1].arista++;
       matrizAdya[nuno-1][ndos-1]=distancia;
       matrizAdya[ndos-1][nuno-1]=distancia;
+      return true;
+      }else{
+       return false;  
+      }
+   }
+   public boolean eliminarEnlace(int nuno,int ndos){
+      if(matrizAdya[nuno-1][ndos-1]!=0){
+      nodos[nuno-1].arista--;
+      nodos[ndos-1].arista--;
+      matrizAdya[nuno-1][ndos-1]=0;
+      matrizAdya[ndos-1][nuno-1]=0;
       return true;
       }else{
        return false;  

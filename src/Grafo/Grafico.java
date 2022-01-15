@@ -20,6 +20,8 @@ public class Grafico extends javax.swing.JFrame {
       btnEnlace = new javax.swing.JButton();
       btnAdya = new javax.swing.JButton();
       jlblSee = new javax.swing.JLabel();
+      jButton1 = new javax.swing.JButton();
+      jButton2 = new javax.swing.JButton();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,7 +43,7 @@ public class Grafico extends javax.swing.JFrame {
          }
       });
 
-      btnEnlace.setText("enlace");
+      btnEnlace.setText("Enlazar");
       btnEnlace.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnEnlaceActionPerformed(evt);
@@ -49,6 +51,15 @@ public class Grafico extends javax.swing.JFrame {
       });
 
       btnAdya.setText("adyacente");
+
+      jButton1.setText("Desenlazar");
+      jButton1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+         }
+      });
+
+      jButton2.setText("Enlazado");
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
       getContentPane().setLayout(layout);
@@ -60,11 +71,17 @@ public class Grafico extends javax.swing.JFrame {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addComponent(btnAgregar)
-               .addComponent(btnAdya)
                .addComponent(jlblSee, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(btnEliminar)
-               .addComponent(btnEnlace))
-            .addContainerGap(84, Short.MAX_VALUE))
+               .addGroup(layout.createSequentialGroup()
+                  .addComponent(btnEnlace)
+                  .addGap(18, 18, 18)
+                  .addComponent(jButton1))
+               .addGroup(layout.createSequentialGroup()
+                  .addComponent(jButton2)
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                  .addComponent(btnAdya)))
+            .addContainerGap(45, Short.MAX_VALUE))
       );
       layout.setVerticalGroup(
          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,9 +93,13 @@ public class Grafico extends javax.swing.JFrame {
                   .addGap(18, 18, 18)
                   .addComponent(btnEliminar)
                   .addGap(18, 18, 18)
-                  .addComponent(btnEnlace)
+                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                     .addComponent(btnEnlace)
+                     .addComponent(jButton1))
                   .addGap(18, 18, 18)
-                  .addComponent(btnAdya)
+                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                     .addComponent(jButton2)
+                     .addComponent(btnAdya))
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
                   .addComponent(jlblSee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                .addComponent(jScrollPane1))
@@ -121,6 +142,17 @@ public class Grafico extends javax.swing.JFrame {
    }
    }//GEN-LAST:event_btnEnlaceActionPerformed
 
+   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+   int nodouno = Integer.parseInt(JOptionPane.showInputDialog(this,"Nodo Uno a Desenlazar:"));
+   int nododos = Integer.parseInt(JOptionPane.showInputDialog(this,"Nodo Dos a Desenlazar:"));
+   if(abc.eliminarEnlace(nodouno, nododos)){
+      jlblSee.setText("Desenlace Hecho");
+      jtxtAUno.setText(abc.mostrar());
+   }else{
+      jlblSee.setText("Desenlace NO Hecho");
+   }
+   }//GEN-LAST:event_jButton1ActionPerformed
+
    public static void main(String args[]) {
       java.awt.EventQueue.invokeLater(new Runnable() {
          public void run() {
@@ -134,6 +166,8 @@ public class Grafico extends javax.swing.JFrame {
    private javax.swing.JButton btnAgregar;
    private javax.swing.JButton btnEliminar;
    private javax.swing.JButton btnEnlace;
+   private javax.swing.JButton jButton1;
+   private javax.swing.JButton jButton2;
    private javax.swing.JScrollPane jScrollPane1;
    private javax.swing.JLabel jlblSee;
    private javax.swing.JTextArea jtxtAUno;
