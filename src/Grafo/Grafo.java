@@ -27,16 +27,23 @@ public class Grafo {
    public boolean eliminar(String info) {
       if(numElem==0){
          return false;
-   }else if (numElem == 1) {
+   }else if (numElem == 1&&nodos[0].getInfo().compareTo(info) == 0) {
             numElem--;
+            
             return true;
    }else {
             for (int i = 0; i < numElem; i++) {
                if (nodos[i].getInfo().compareTo(info) == 0) {
+                  int elemento = i;
                   for (int j = i; j < numElem-1; j++) {
                      nodos[j] = nodos[j + 1];
                   }
                      numElem--;
+                     for (int z = 0; z < nodos.length; z++) 
+                        for (int x = 0; x < nodos.length; x++) {
+                        matrizAdya[elemento][x] = 0;
+                        matrizAdya[x][elemento] = 0;
+                   }
                      return true;
                }
             }
