@@ -3,10 +3,11 @@ public class Nodo {
    private String info;
    private boolean arista;
    private int[] enlaces;
-   private int num=0;
-   public Nodo(String info){
+   private int num;
+   public Nodo(String info,int num){
       this.info = info;
-      num+=1;
+      arista = false;
+      this.num = num;
    }
 
    public String getInfo() {
